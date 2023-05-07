@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- include bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>ボタンジェネレーター</title>
+  </head>
+  <body>
+    <div class="container pt-5">
+      <h1>Button ジェネレーター</h1>
+      <form action="" method="">
+        <div class="mb-3">
+          <label class="form-label" for="text" >ボタンに表示するテキスト</label>
+          <input
+            type="text"
+            name="text"
+            id="text"
+            class="form-control"
+            placeholder="テキスト"
+          />
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="color">ボタンの色</label>
+          <input type="color" name="color" id="color" class="p-1" />
+        </div>
+        <div class="mb-3">
+          <label for="size">ボタンのサイズ</label>
+          <select
+            name="size"
+            id="size"
+            class="form-select ml-3"
+            aria-label=".form-select-lg example"
+          >
+            <option selected>ボタンのサイズを選択してください</option>
+            <option value="small">小</option>
+            <option value="medium">中</option>
+            <option value="large">大</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="border">枠線</label>
+          <div class="d-flex algin-items-center">
+            <div class="w-25 me-3">
+              <input
+                type="number"
+                max="10"
+                name="border"
+                id="border-width"
+                class="form-control"
+                placeholder="枠線の太さ"
+              />
+            </div>
+            <div class="w-25 me-3">
+              <select
+                name="border-type"
+                id="border_type"
+                class="form-select"
+              >
+                <option selected>枠線のスタイル</option>
+                <option value="solid">実線</option>
+                <option value="dotted">点線</option>
+                <option value="dashed">破線</option>
+                <option value="double">二重線</option>
+                <option value="groove">浮き出し線</option>
+              </select>
+            </div>
+            <div class="w-25">
+              <label for="border-color">枠線のカラー：</label>
+              <input
+                type="color"
+                name="border-color"
+                id="border-color"
+                class="p-1"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 w-25">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            name="shadow"
+            id="shadow"
+          />
+          <label class="form-check-label" for="shadow">影の有無</label>
+        </div>
+        <div class="mb-3 w-25">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            name="radius"
+            id="radius"
+          />
+          <label class="form-check-label" for="radius">角丸の有無</label>
+        </div>
+        <div class="mb-3 w-25">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            name="bold"
+            id="bold"
+          />
+          <label class="form-check-label" for="bold">太字の有無</label>
+        </div>
+        <div class="mb-3 w-25">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            name="italic"
+            id="italic"
+          />
+          <label class="form-check-label" for="italic">斜体の有無</label>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary px-3"
+          onclick="createButton()"
+        >
+          生成
+        </button>
+        <button type="button" class="btn btn-secondary px-3">リセット</button>
+      </form>
+    </div>
+
+    <div class="container generate-value-area d-flex">
+      <!-- 生成したボタンを表示するエリア -->
+      <div class="container mt-5">
+        <h2>生成したボタン</h2>
+        <div class="button-area" id="button_area"></div>
+      </div>
+
+      <!-- 生成したボタンのコードを表示するエリア -->
+      <div class="container mt-5">
+        <h2>生成したボタンのコード</h2>
+        <p>コードをコピーしてご利用ください。</p>
+        <button type="button" class="btn btn-primary px-3" onclick="copyCode()">
+          コピー
+        </button>
+        <pre>
+          <code class="code-area" id="code_area"></code>
+        </pre>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
