@@ -28,9 +28,13 @@
             placeholder="テキスト"
           />
         </div>
-        <div class="mb-3">
-          <label class="form-label" for="color">ボタンの色</label>
-          <input type="color" name="color" id="color" class="p-1" />
+        <div class="mb-3 d-flex align-items-center">
+          <label for="color" class="me-2">ボタンの色</label>
+          <input type="color" name="back-color" id="background_color" class="p-1 form-control-color" />
+        </div>
+        <div class="mb-3 d-flex align-items-center">
+          <label for="color" class="me-2">テキストの色</label>
+          <input type="color" name="color" id="color" class="p-1 form-control-color" value="#ffffff"/>
         </div>
         <div class="mb-3">
           <label for="size">ボタンのサイズ</label>
@@ -54,9 +58,10 @@
                 type="number"
                 max="10"
                 name="border"
-                id="border-width"
+                id="border_width"
                 class="form-control"
                 placeholder="枠線の太さ"
+                value="1"
               />
             </div>
             <div class="w-25 me-3">
@@ -73,13 +78,13 @@
                 <option value="groove">浮き出し線</option>
               </select>
             </div>
-            <div class="w-25">
+            <div class="w-25 d-flex align-items-center">
               <label for="border-color">枠線のカラー：</label>
               <input
                 type="color"
                 name="border-color"
-                id="border-color"
-                class="p-1"
+                id="border_color"
+                class="p-1 form-control-color"
               />
             </div>
           </div>
